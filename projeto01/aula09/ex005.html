@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com o DOM</title>
+    <style>
+        body {
+            background: rgb(68, 125, 199);
+            color: white;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique em mim</div>
+    <div name="msg2">Clique em mim2</div>
+    <div class="msg3">Clique em mim3</div>
+    <div class="msg4">Clique em mim4</div>
+
+
+    <script>
+        var p1 = window.document.getElementsByTagName('p')[1] // indica o primeiro <p>
+        window.document.write(p1.innerText) // innerText pega só o texto, sem formataçõ, que está dentro do primeiro <p>
+        window.document.write(p1.innerHTML) // pega o html inteiro, inclusive com as tags filhas(child)
+        p1.style.color = 'blue' // mudar a cor do texto da variavel 'p1'
+        var corpo = window.document.body
+        corpo.style.background = 'black'
+
+
+        var d = window.document.getElementById('msg')
+        d.style.background = 'green'
+        d.innerText = 'Estou aguardando'
+        // Comando completo
+        //window.document.getElementById('msg').innerText = 'Estou aguardando'
+        
+        var e = window.document.getElementsByName('msg2')[0]
+        e.innerText = 'Olá!'
+
+        var f = window.document.getElementsByClassName('msg3')[0]
+        f.innerText = 'Vasco'
+
+        // por Seletor
+        var g = window.document.querySelector('div.msg4')
+        g.style.background = 'yellow'
+        
+        /*
+        window.document.write(window.document.URL)
+        window.document.write(window.document.charset)
+        window.document.write(window.navigator.appName)
+        */
+    </script>
+    
+</body>
+</html>
